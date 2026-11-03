@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #0e1420;
+  color: #f8fafc;
+  font-family: system-ui, sans-serif;
+}
+
+.container {
+  width: min(440px, 90%);
+  padding: 36px 0;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #1e293b;
+  font-size: 22px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.status {
+  color: #6ee7b7;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Counter */
+
+.card {
+  background: #192335;
+  border: 1px solid #293548;
+  border-radius: 20px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.label {
+  color: #94a3b8;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+#count {
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  margin: 24px 0 10px;
+}
+
+.description {
+  margin: 0 0 32px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+button {
+  width: 100%;
+  background: #34d399;
+  color: #102018;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: #6ee7b7;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.request-status {
+  min-height: 18px;
+  margin: 12px 0 26px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+.request-status.error {
+  color: #fca5a5;
+}
+
+/* Request Log */
+
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.log-header h2 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.log-header span {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 6px 0 0;
+
+  height: 280px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.log-list {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+}
+
+.log-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.log-list::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+.log-list li {
+  flex-shrink: 0;
+}
+
+.log-list .empty-log {
+  justify-content: center;
+  padding: 26px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.log-info,
+.log-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.log-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6ee7b7;
+}
+
+.log-env,
+.log-time {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.log-count {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.log-meta {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  color: #64748b;
+  font-size: 11px;
+}
+
+footer p {
+  margin: 5px 0;
+}

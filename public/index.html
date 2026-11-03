@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Express Counter | LWF Demo</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">⚡</span>
+        <div>
+          <h1>Express Counter</h1>
+          <p>Lambda Web Functions × DynamoDB</p>
+        </div>
+      </div>
+      <span class="status">● ONLINE</span>
+    </header>
+
+    <section class="card">
+      <p class="label">TOTAL CLICKS</p>
+      <h2 id="count">---</h2>
+      <p class="description">
+        Stored in Amazon DynamoDB
+      </p>
+      <button id="increment" disabled>
+        + Count Up
+      </button>
+    </section>
+
+    <p id="request-status" class="request-status"
+       role="status">
+      Loading...
+    </p>
+
+    <section class="log-section">
+      <div class="log-header">
+        <h2>Request Log</h2>
+        <span>Session history</span>
+      </div>
+
+      <ul id="request-log" class="log-list">
+        <li class="empty-log">
+          Click to send a POST request
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Powered by Express + TypeScript</p>
+      <p>Persistent counter with DynamoDB</p>
+    </footer>
+  </main>
+</body>
+</html>
