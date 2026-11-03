@@ -28,7 +28,7 @@ npm run dev
 
 ```
 aws lambda-web deploy \
-  --name lambda-web-express-1 \
+  --name 関数名 \
   --code . \
   --entry-point src/index.js
 ```
