@@ -69,6 +69,17 @@ IAMで関数名を元にロールを探し下記ポリシーをインライン�
 }
 ```
 
+## 関数のアップデート方法
+
+デプロイと同じコマンドを実行
+
+```
+aws lambda-web deploy \
+  --name 関数名 \
+  --code . \
+  --entry-point src/index.js
+```
+
 ## ポイント
 
 - 謎の `index.js` がデプロイされる
