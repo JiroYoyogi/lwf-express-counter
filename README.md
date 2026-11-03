@@ -15,7 +15,7 @@ npm i
 16行目付近
 
 ```js
-const tableName = "lwf-counter";
+const tableName = "";
 ```
 
 ### 3. 起動
