@@ -2,13 +2,27 @@
 
 ## ローカルで動かす方法
 
-### 1. インストール
+1. DynamoDBテーブルを準備
+1. ソースをDL
+1. npm install
+1. ソースにDDBテーブルを記述
+1. npm run start
+
+### 1. DynamoDBテーブルを準備
+
+パーティションキーを `id` として「テーブルの作成」
+
+### 2. ソースをDL
+
+Download ZIP
+
+### 3. インストール
 
 ```
-npm i
+npm install
 ```
 
-### 2. DynamoDBテーブル名を指定
+### 4. ソースにDDBテーブルを記述
 
 - src/index.js
 
@@ -18,7 +32,7 @@ npm i
 const tableName = "";
 ```
 
-### 3. 起動
+### 5. npm run dev
 
 ```
 npm run dev
@@ -26,11 +40,33 @@ npm run dev
 
 ## デプロイ方法
 
+### 1. 関数名を指定してデプロイ
+
 ```
 aws lambda-web deploy \
   --name 関数名 \
   --code . \
   --entry-point src/index.js
+```
+
+### 2. 関数のIAMロールにポリシー追加
+
+IAMで関数名を元にロールを探し下記ポリシーをインラインで作成
+
+```json
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:PutItem",
+				"dynamodb:Scan"
+			],
+			"Resource": "arn:aws:dynamodb:ap-northeast-1:アカウントID:table/テーブル名"
+		}
+	]
+}
 ```
 
 ## ポイント
