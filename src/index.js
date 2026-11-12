@@ -13,7 +13,7 @@ import {
 const app = express();
 
 // DynamoDBテーブル名を指定
-const tableName = "lwf-counter";
+const tableName = "";
 
 if (!tableName) {
   throw new Error("tableName is not defined");
